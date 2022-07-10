@@ -1,6 +1,7 @@
 package com.parenthings.kalv.ui.login
 
 import android.app.Activity
+import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import androidx.lifecycle.Observer
@@ -12,11 +13,14 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.view.View
 import android.view.inputmethod.EditorInfo
+import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import com.parenthings.kalv.databinding.ActivityLoginBinding
 
 import com.parenthings.kalv.R
+import com.parenthings.kalv.RegisterActivity
 
 class LoginActivity : AppCompatActivity() {
 
@@ -33,17 +37,11 @@ class LoginActivity : AppCompatActivity() {
 
         supportActionBar?.title = "Masuk";
 
+        val registerButton:TextView = findViewById<Button>(R.id.register_button)
 
-
-
-
-    }
-
-    fun forgotPassword(view: View) {
-
-    }
-
-    fun registerForm(view: View) {
-
+        registerButton.setOnClickListener {
+            val intent = Intent(this, RegisterActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
