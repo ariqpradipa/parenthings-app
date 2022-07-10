@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:background="#F6E9F0"
+    tools:context=".ui.login.LoginActivity">
+
+    <View
+        android:id="@+id/login_whitebackground"
+        android:layout_width="337dp"
+        android:layout_height="524dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/login_rectangle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/email_layout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="260dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="240dp"
+        android:hint="Email"
+        app:layout_constraintEnd_toEndOf="@+id/login_whitebackground"
+        app:layout_constraintStart_toStartOf="@+id/login_whitebackground"
+        app:layout_constraintTop_toTopOf="@+id/login_whitebackground">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/password_layout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="260dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="310dp"
+        android:hint="Password"
+        app:endIconMode="password_toggle"
+        app:layout_constraintEnd_toEndOf="@+id/login_whitebackground"
+        app:layout_constraintStart_toStartOf="@+id/login_whitebackground"
+        app:layout_constraintTop_toTopOf="@+id/login_whitebackground">
+
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/forgotPassword_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="6dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:onClick="forgotPassword"
+        android:text="Lupa kata sandi?"
+        app:layout_constraintBottom_toTopOf="@+id/login_button"
+        app:layout_constraintEnd_toStartOf="@+id/register_button" />
+
+    <TextView
+        android:id="@+id/register_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="6dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:onClick="registerForm"
+        android:text="Daftar"
+        android:textColor="#CA80B2"
+        app:layout_constraintBottom_toTopOf="@+id/login_button"
+        app:layout_constraintEnd_toEndOf="@+id/login_whitebackground" />
+
+    <Button
+        android:id="@+id/login_button"
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="410dp"
+        android:text="Masuk"
+        app:layout_constraintEnd_toEndOf="@+id/login_whitebackground"
+        app:layout_constraintStart_toStartOf="@+id/login_whitebackground"
+        app:layout_constraintTop_toTopOf="@+id/login_whitebackground"
+        app:backgroundTint="#CA80B2" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/login_whitebackground"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="@+id/login_whitebackground"
+        app:layout_constraintTop_toTopOf="@+id/login_whitebackground"
+        app:srcCompat="@drawable/login_image" />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
