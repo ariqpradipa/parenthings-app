@@ -18,6 +18,7 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import com.parenthings.kalv.ForgotPasswordActivity
+import com.parenthings.kalv.MainActivity
 import com.parenthings.kalv.databinding.ActivityLoginBinding
 
 import com.parenthings.kalv.R
@@ -40,6 +41,7 @@ class LoginActivity : AppCompatActivity() {
 
         val registerButton:TextView = findViewById<Button>(R.id.register_button)
         val forgotPasswordButton:TextView = findViewById<Button>(R.id.forgotPassword_button)
+        val loginButton:Button = findViewById(R.id.login_button)
 
         registerButton.setOnClickListener {
             val intent = Intent(this, RegisterActivity::class.java)
@@ -50,5 +52,15 @@ class LoginActivity : AppCompatActivity() {
             val intent = Intent(this, ForgotPasswordActivity::class.java)
             startActivity(intent)
         }
+
+        loginButton.setOnClickListener(View.OnClickListener {
+            val email: String = findViewById<EditText>(R.id.email).getText().toString()
+            val password: String = findViewById<EditText>(R.id.password).getText().toString()
+
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+
+            //Toast.makeText(this, "Email: $email\nPassword: $password", Toast.LENGTH_LONG).show()
+        })
     }
 }

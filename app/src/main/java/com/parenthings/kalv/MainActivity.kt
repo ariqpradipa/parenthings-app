@@ -1,40 +1,88 @@
 package com.parenthings.kalv
 
 import android.os.Bundle
-import com.google.android.material.snackbar.Snackbar
+import androidx.annotation.Nullable
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
-import com.parenthings.kalv.databinding.ActivityMainBinding
+import androidx.appcompat.widget.Toolbar
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentPagerAdapter
+import androidx.viewpager.widget.ViewPager
+import com.google.android.material.tabs.TabLayout
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var appBarConfiguration: AppBarConfiguration
-    private lateinit var binding: ActivityMainBinding
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
 
-     binding = ActivityMainBinding.inflate(layoutInflater)
-     setContentView(binding.root)
+        // Create the object of Toolbar, ViewPager and
+        // TabLayout and use “findViewById()” method*/
+        var tab_toolbar = findViewById<Toolbar>(R.id.toolbar)
+        var tab_viewpager = findViewById<ViewPager>(R.id.tab_viewpager)
+        var tab_tablayout = findViewById<TabLayout>(R.id.tab_tablayout)
 
-        setSupportActionBar(binding.toolbar)
+        // As we set NoActionBar as theme to this activity
+        // so when we run this project then this activity doesn't
+        // show title. And for this reason, we need to run
+        // setSupportActionBar method
+        setSupportActionBar(tab_toolbar)
+        setupViewPager(tab_viewpager)
 
-        val navController = findNavController(R.id.nav_host_fragment_content_main)
-        appBarConfiguration = AppBarConfiguration(navController.graph)
-        setupActionBarWithNavController(navController, appBarConfiguration)
-
-        binding.fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show()
-        }
+        // If we dont use setupWithViewPager() method then
+        // tabs are not used or shown when activity opened
+        tab_tablayout.setupWithViewPager(tab_viewpager)
     }
 
-    override fun onSupportNavigateUp(): Boolean {
-    val navController = findNavController(R.id.nav_host_fragment_content_main)
-    return navController.navigateUp(appBarConfiguration)
-            || super.onSupportNavigateUp()
+    // This function is used to add items in arraylist and assign
+    // the adapter to view pager
+    private fun setupViewPager(viewpager: ViewPager) {
+        var adapter: ViewPagerAdapter = ViewPagerAdapter(supportFragmentManager)
+
+        // LoginFragment is the name of Fragment and the Login
+        // is a title of tab
+        adapter.addFragment(BerandaFragment(), "Beranda")
+        adapter.addFragment(ForumFragment(), "Forum")
+        adapter.addFragment(KonselingFragment(), "Konseling")
+
+        // setting adapter to view pager.
+        viewpager.setAdapter(adapter)
+    }
+
+    // This "ViewPagerAdapter" class overrides functions which are
+    // necessary to get information about which item is selected
+    // by user, what is title for selected item and so on.*/
+    class ViewPagerAdapter : FragmentPagerAdapter {
+
+        // objects of arraylist. One is of Fragment type and
+        // another one is of String type.*/
+        private final var fragmentList1: ArrayList<Fragment> = ArrayList()
+        private final var fragmentTitleList1: ArrayList<String> = ArrayList()
+
+        // this is a secondary constructor of ViewPagerAdapter class.
+        public constructor(supportFragmentManager: FragmentManager)
+                : super(supportFragmentManager)
+
+        // returns which item is selected from arraylist of fragments.
+        override fun getItem(position: Int): Fragment {
+            return fragmentList1.get(position)
+        }
+
+        // returns which item is selected from arraylist of titles.
+        @Nullable
+        override fun getPageTitle(position: Int): CharSequence {
+            return fragmentTitleList1.get(position)
+        }
+
+        // returns the number of items present in arraylist.
+        override fun getCount(): Int {
+            return fragmentList1.size
+        }
+
+        // this function adds the fragment and title in 2 separate  arraylist.
+        fun addFragment(fragment: Fragment, title: String) {
+            fragmentList1.add(fragment)
+            fragmentTitleList1.add(title)
+        }
     }
 }

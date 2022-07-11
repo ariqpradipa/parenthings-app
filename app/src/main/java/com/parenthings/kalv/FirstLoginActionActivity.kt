@@ -17,7 +17,7 @@ class FirstLoginActionActivity : AppCompatActivity() {
         val age1517Button: Button = findViewById(R.id.age1517_button)
 
         age03Button.setOnClickListener {
-            
+
             gotoMainActivity()
 
         }
