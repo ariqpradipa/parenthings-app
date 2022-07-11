@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F6E9F0"
+    tools:context=".FirstLoginActionActivity">
+
+    <View
+        android:id="@+id/login_whitebackground"
+        android:layout_width="337dp"
+        android:layout_height="500dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="80dp"
+        android:background="@drawable/login_rectangle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/umurBerapa_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="Umur berapakah anak Anda?"
+        android:textColor="#775FA9"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/login_whitebackground"
+        app:layout_constraintStart_toStartOf="@+id/login_whitebackground"
+        app:layout_constraintTop_toTopOf="@+id/login_whitebackground" />
+
+    <Button
+        android:id="@+id/noChild_button"
+        android:layout_width="260dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="80dp"
+        android:text="Tidak memiliki anak"
+        android:textColor="#775FA9"
+        app:backgroundTint="#F6E9F0"
+        app:layout_constraintEnd_toEndOf="@+id/login_whitebackground"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="@+id/login_whitebackground"
+        app:layout_constraintTop_toTopOf="@+id/login_whitebackground" />
+
+    <Button
+        android:id="@+id/age03_button"
+        android:layout_width="260dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:text="0 - 3"
+        android:textColor="#775FA9"
+        app:backgroundTint="#F6E9F0"
+        app:layout_constraintEnd_toEndOf="@+id/login_whitebackground"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="@+id/login_whitebackground"
+        app:layout_constraintTop_toBottomOf="@+id/noChild_button" />
+
+    <Button
+        android:id="@+id/age48_button"
+        android:layout_width="260dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:text="4 - 8"
+        android:textColor="#775FA9"
+        app:backgroundTint="#F6E9F0"
+        app:layout_constraintEnd_toEndOf="@+id/login_whitebackground"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="@+id/login_whitebackground"
+        app:layout_constraintTop_toBottomOf="@+id/age03_button" />
+
+    <Button
+        android:id="@+id/age911_button"
+        android:layout_width="260dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:text="9 - 11"
+        android:textColor="#775FA9"
+        app:backgroundTint="#F6E9F0"
+        app:layout_constraintEnd_toEndOf="@+id/login_whitebackground"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="@+id/login_whitebackground"
+        app:layout_constraintTop_toBottomOf="@+id/age48_button" />
+
+    <Button
+        android:id="@+id/age1214_button"
+        android:layout_width="260dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:text="12 - 14"
+        android:textColor="#775FA9"
+        app:backgroundTint="#F6E9F0"
+        app:layout_constraintEnd_toEndOf="@+id/login_whitebackground"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="@+id/login_whitebackground"
+        app:layout_constraintTop_toBottomOf="@+id/age911_button" />
+
+    <Button
+        android:id="@+id/age1517_button"
+        android:layout_width="260dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:text="15 - 17"
+        android:textColor="#775FA9"
+        app:backgroundTint="#F6E9F0"
+        app:layout_constraintEnd_toEndOf="@+id/login_whitebackground"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="@+id/login_whitebackground"
+        app:layout_constraintTop_toBottomOf="@+id/age1214_button" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

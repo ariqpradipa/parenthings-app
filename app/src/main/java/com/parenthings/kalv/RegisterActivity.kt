@@ -11,7 +11,7 @@ class RegisterActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
 
-        val backButton:TextView = findViewById(R.id.register_submit_button)
+        val backButton:TextView = findViewById(R.id.kembali_register_button)
 
         backButton.setOnClickListener {
             val intent = Intent(this, LoginActivity::class.java)

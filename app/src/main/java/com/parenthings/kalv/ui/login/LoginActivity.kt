@@ -17,6 +17,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import com.parenthings.kalv.ForgotPasswordActivity
 import com.parenthings.kalv.databinding.ActivityLoginBinding
 
 import com.parenthings.kalv.R
@@ -38,9 +39,15 @@ class LoginActivity : AppCompatActivity() {
         supportActionBar?.title = "Masuk";
 
         val registerButton:TextView = findViewById<Button>(R.id.register_button)
+        val forgotPasswordButton:TextView = findViewById<Button>(R.id.forgotPassword_button)
 
         registerButton.setOnClickListener {
             val intent = Intent(this, RegisterActivity::class.java)
+            startActivity(intent)
+        }
+
+        forgotPasswordButton.setOnClickListener {
+            val intent = Intent(this, ForgotPasswordActivity::class.java)
             startActivity(intent)
         }
     }
